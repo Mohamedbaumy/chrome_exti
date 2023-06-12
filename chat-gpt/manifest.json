@@ -1,0 +1,50 @@
+{
+  "name": "Chat Gpt text direction",
+  "version": "0.1.0",
+  "description": "trans text direction",
+  "permissions": [
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://*.openai.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.openai.com/*"
+      ],
+      "js": [
+        "contentScript.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "assets/arrow.png",
+        "assets/upload.png",
+        "assets/arabic.png",
+        "assets/js.png",
+        "assets/draw.png",
+        "assets/programmer.png"
+      ],
+      "matches": [
+        "https://*.openai.com/*"
+      ]
+    }
+  ],
+  "action": {
+    "default_icon": {
+      "16": "assets/ext-icon.png",
+      "24": "assets/ext-icon.png",
+      "32": "assets/ext-icon.png"
+    },
+    "default_title": "Chat Gpt text direction",
+    "default_popup": "popup.html"
+  },
+  "manifest_version": 3
+}
